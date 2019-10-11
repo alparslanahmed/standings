@@ -2,6 +2,7 @@
 
 namespace App\Jobs\flashscore;
 
+use App\Jobs\UpdateStandingJob;
 use App\Standing;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -67,12 +68,7 @@ class GetTableJob implements ShouldQueue
                 'league_id' => $this->league_id,
             ];
 
-            $newStanding = Standing::updateOrCreate(
-                ['pts' => $standing['pts']],
-                $standing
-            );
-
-            dd($newStanding);
+            UpdateStandingJob::dispatch($standing);
         });
     }
 }
