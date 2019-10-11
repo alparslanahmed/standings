@@ -72,7 +72,7 @@ class GetCategoriesJob implements ShouldQueue
                     ['name' => $league_name, 'country_id' => $countryModel->id]
                 );
 
-                GetTableJob::dispatchNow($league->id, $leagueUrl);
+                GetTableJob::dispatch($league->id, $leagueUrl);
             });
         });
 
