@@ -1,0 +1,8 @@
+{
+    "name": "standings_worker",
+    "script": "artisan",
+    "exec_mode": "fork",
+    "interpreter": "php",
+    "instances": "12",
+    "args": "queue:work --queue=default --tries=1 --sleep=0"
+}
