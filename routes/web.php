@@ -14,6 +14,5 @@
 use App\Jobs\flashscore\GetCategoriesJob;
 
 Route::get('/', function () {
-    GetCategoriesJob::dispatch();
     return view('welcome');
 });
