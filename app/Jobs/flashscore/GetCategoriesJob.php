@@ -42,7 +42,9 @@ class GetCategoriesJob implements ShouldQueue
         $page = $browser->newPage();
         $page->goto($this->host);
 
-        $page->click('[id^=lmenu] a');
+        $page->evaluate(JsFunction::createWithBody("
+            jQuery('[id^=lmenu] a').click();
+        "));
 
         $html = $page->evaluate(JsFunction::createWithBody('return document.documentElement.outerHTML'));
 
