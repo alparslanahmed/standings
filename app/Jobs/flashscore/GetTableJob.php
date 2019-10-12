@@ -3,7 +3,6 @@
 namespace App\Jobs\flashscore;
 
 use App\Jobs\UpdateStandingJob;
-use App\Standing;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
